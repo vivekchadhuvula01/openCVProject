@@ -14,7 +14,7 @@ def open_camera():
             print("Failed to grab frame.")
             break
 
-        cv2.imshow("Camera Feed", frame)
+        cv2.imshow("Camera Feed (press Q to close)", frame)
 
         # Press 'q' to exit the camera window
         if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -26,16 +26,10 @@ def open_camera():
 
 
 def Permissions(prompt_text:str, Choices:list):
+    
     value = questionary.select(
         prompt_text,
         choices=Choices
     ).ask()
     return value
 
-val = Permissions("Allow camera",["yes","No"])
-if (val == "yes"):
-    open_camera()
-else:
-    print("Permission Required")
-    val = Permissions("Allow camera",["yes","No"])
-    
