@@ -1,4 +1,5 @@
 import cv2
+import questionary
 
 def open_camera():
     cap = cv2.VideoCapture(0)  # 0 is usually the default webcam
@@ -22,3 +23,19 @@ def open_camera():
     cap.release()
     cv2.destroyAllWindows()
 
+
+
+def Permissions(prompt_text:str, Choices:list):
+    value = questionary.select(
+        prompt_text,
+        choices=Choices
+    ).ask()
+    return value
+
+val = Permissions("Allow camera",["yes","No"])
+if (val == "yes"):
+    open_camera()
+else:
+    print("Permission Required")
+    val = Permissions("Allow camera",["yes","No"])
+    
