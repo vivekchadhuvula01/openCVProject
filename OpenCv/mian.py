@@ -3,12 +3,7 @@ import Variables
 
 
 Access:bool = False
-# permission = generalFunctions.Permissions(prompt_text=Variables.Prompt , Choices=Variables.Choices)
-# if (permission == "Yes"):
-#     Access = True
-# else:
-#     Access = False
-#     permission = generalFunctions.Permissions(prompt_text=Variables.Prompt , Choices=Variables.Choices)
+
 
 if (Access == False):
     permission = generalFunctions.Permissions(prompt_text=Variables.Prompt , Choices=Variables.Choices)
