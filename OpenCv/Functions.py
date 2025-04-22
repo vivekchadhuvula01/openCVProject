@@ -14,10 +14,10 @@ def open_camera():
             print("Failed to grab frame.")
             break
 
-        cv2.imshow("Camera Feed (press Q to close)", frame)
+        cv2.imshow("Camera Feed (press x to close)", frame)
 
         # Press 'q' to exit the camera window
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        if cv2.waitKey(1) & 0xFF == ord('x'):
             break
 
     cap.release()
